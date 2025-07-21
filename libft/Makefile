@@ -1,0 +1,52 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: rafaoliv <rafaoliv@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2025/07/21 11:31:58 by rafaoliv          #+#    #+#              #
+#    Updated: 2025/07/21 18:07:17 by rafaoliv         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+CC = cc
+
+FLAGS = -Wall -Wextra -Werror
+
+NAME = libft.a
+
+OBJ = $(SRC:.c=.o)
+
+SRC = 	ft_isalnum.c \
+	ft_isalpha.c \
+	ft_isascii.c \
+	ft_isdigit.c \
+	ft_isprint.c \
+	ft_strlen.c \
+	ft_toupper.c \
+	ft_tolower.c \
+	ft_atoi.c \
+	ft_strncmp.c
+
+%.o: %.c
+	@$(CC) $(FLAGS) -c $< -o $@
+	@echo "$@ ✔️"
+
+$(NAME): $(OBJ)
+	@ar -crs $(NAME) $(OBJ)
+
+all: $(NAME)
+
+norminette:
+	@norminette $(SRC) -R CheckForbiddenSourceHeader
+
+clean:
+	@rm -f $(OBJ)
+	@echo "Arquivos .o limpos 🧴"
+
+fclean: clean
+	@rm -f $(NAME)
+	@echo "$(NAME) limpo 🧽🧼"
+
+re: fclean all
