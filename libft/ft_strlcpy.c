@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rafaoliv <rafaoliv@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/21 15:40:31 by rafaoliv          #+#    #+#             */
-/*   Updated: 2025/07/21 16:15:31 by rafaoliv         ###   ########.fr       */
+/*   Created: 2025/07/22 14:13:44 by marvin            #+#    #+#             */
+/*   Updated: 2025/07/22 14:13:44 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,22 @@
 
 #include <string.h>
 
-size_t	ft_strlen(const char *s)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	size_t	i;
+	size_t	i; 
+	size_t	len;
 
 	i = 0;
-	while (*s != '\0')
+	len = ft_strlen(src);
+	if (size > 0)
 	{
-		s++;
-		i++;
+		while (i < size - 1 && i < len)
+		{
+			dst[i] = src[i];
+			i++;
+		}
+		dst[i] = '\0';
 	}
-	return (i);
+	return (len);
 }
+// verificar função no man de novol

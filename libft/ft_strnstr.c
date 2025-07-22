@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rafaoliv <rafaoliv@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/21 15:40:31 by rafaoliv          #+#    #+#             */
-/*   Updated: 2025/07/21 16:15:31 by rafaoliv         ###   ########.fr       */
+/*   Created: 2025/07/22 18:46:27 by marvin            #+#    #+#             */
+/*   Updated: 2025/07/22 18:46:27 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,18 @@
 
 #include <string.h>
 
-size_t	ft_strlen(const char *s)
+char	*strnstr(const char *big, const char *little, size_t len)
 {
-	size_t	i;
-
-	i = 0;
-	while (*s != '\0')
+	if (*little == '\0')
+		return (big);
+	while (*big)
 	{
-		s++;
-		i++;
+		if (*big == *little)
+		{
+			if (ft_strncmp(big, little, len) == 0)
+				return (big);
+		}
+		big++;
 	}
-	return (i);
+	return (0);
 }
