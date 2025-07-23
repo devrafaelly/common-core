@@ -6,7 +6,7 @@
 #    By: rafaoliv <rafaoliv@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/21 11:31:58 by rafaoliv          #+#    #+#              #
-#    Updated: 2025/07/21 18:07:17 by rafaoliv         ###   ########.fr        #
+#    Updated: 2025/07/23 13:17:10 by rafaoliv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,13 @@ SRC = 	ft_isalnum.c \
 	ft_toupper.c \
 	ft_tolower.c \
 	ft_atoi.c \
-	ft_strncmp.c
+	ft_strncmp.c \
+	ft_strlcpy.c \
+	ft_strlcat.c \
+	ft_strnstr.c \
+	ft_strchr.c \
+	ft_strrchr.c \
+	ft_bzero.c
 
 %.o: %.c
 	@$(CC) $(FLAGS) -c $< -o $@

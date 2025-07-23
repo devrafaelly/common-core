@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rafaoliv <rafaoliv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 18:46:27 by marvin            #+#    #+#             */
-/*   Updated: 2025/07/22 18:46:27 by marvin           ###   ########.fr       */
+/*   Updated: 2025/07/23 12:00:07 by rafaoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,21 @@
 
 #include <string.h>
 
-char	*strnstr(const char *big, const char *little, size_t len)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	if (*little == '\0')
-		return (big);
-	while (*big)
+		return ((char *)big);
+	if (len > 0)
 	{
-		if (*big == *little)
+		while (*big)
 		{
-			if (ft_strncmp(big, little, len) == 0)
-				return (big);
+			if (*big == *little)
+			{
+				if (ft_strncmp(big, little, len) == 0)
+					return ((char *)big);
+			}
+			big++;
 		}
-		big++;
 	}
 	return (0);
 }
