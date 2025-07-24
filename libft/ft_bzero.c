@@ -6,18 +6,20 @@
 /*   By: rafaoliv <rafaoliv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/23 12:50:28 by rafaoliv          #+#    #+#             */
-/*   Updated: 2025/07/23 13:33:30 by rafaoliv         ###   ########.fr       */
+/*   Updated: 2025/07/24 15:05:49 by rafaoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+#include <string.h>
 
 void	ft_bzero(void *s, size_t n)
 {
 	size_t	i;
 
 	i = 0;
-	while (*(char *)s && (i < n))
+	while (i < n)
 	{
 		*(char *)s = '\0';
 		i++;

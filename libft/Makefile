@@ -6,7 +6,7 @@
 #    By: rafaoliv <rafaoliv@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/21 11:31:58 by rafaoliv          #+#    #+#              #
-#    Updated: 2025/07/23 13:17:10 by rafaoliv         ###   ########.fr        #
+#    Updated: 2025/07/24 16:09:50 by rafaoliv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,13 @@ SRC = 	ft_isalnum.c \
 	ft_strnstr.c \
 	ft_strchr.c \
 	ft_strrchr.c \
-	ft_bzero.c
+	ft_bzero.c \
+	ft_memset.c \
+	ft_memcmp.c \
+	ft_memchr.c \
+	ft_memmove.c \
+	ft_memcpy.c \
+	ft_strdup.c
 
 %.o: %.c
 	@$(CC) $(FLAGS) -c $< -o $@

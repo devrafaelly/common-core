@@ -6,7 +6,7 @@
 /*   By: rafaoliv <rafaoliv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 18:46:27 by marvin            #+#    #+#             */
-/*   Updated: 2025/07/23 12:00:07 by rafaoliv         ###   ########.fr       */
+/*   Updated: 2025/07/24 15:08:39 by rafaoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,19 +16,21 @@
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	if (*little == '\0')
+	size_t	strlen;
+	size_t	i;
+
+	strlen = ft_strlen(little);
+	i = 0;
+	if (little[i] == '\0')
 		return ((char *)big);
-	if (len > 0)
+	while (big[i] && i < len)
 	{
-		while (*big)
+		if (len - i >= strlen)
 		{
-			if (*big == *little)
-			{
-				if (ft_strncmp(big, little, len) == 0)
-					return ((char *)big);
-			}
-			big++;
+			if (ft_strncmp(&big[i], little, strlen) == 0)
+				return ((char *)&big[i]);
 		}
+		i++;
 	}
-	return (0);
+	return (NULL);
 }

@@ -6,7 +6,7 @@
 /*   By: rafaoliv <rafaoliv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/21 15:40:31 by rafaoliv          #+#    #+#             */
-/*   Updated: 2025/07/21 16:15:31 by rafaoliv         ###   ########.fr       */
+/*   Updated: 2025/07/24 16:39:26 by rafaoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,8 @@ size_t	ft_strlen(const char *s)
 	size_t	i;
 
 	i = 0;
-	while (*s != '\0')
+	while (s[i] != '\0')
 	{
-		s++;
 		i++;
 	}
 	return (i);
