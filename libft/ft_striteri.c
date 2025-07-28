@@ -1,37 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/22 19:11:55 by marvin            #+#    #+#             */
-/*   Updated: 2025/07/28 14:45:49 by codespace        ###   ########.fr       */
+/*   Created: 2025/07/28 15:22:33 by codespace         #+#    #+#             */
+/*   Updated: 2025/07/28 15:49:33 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-#include <string.h>
-
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+static  void    f(unsigned int, char* c)
 {
-	size_t	dst_len;
-	size_t	src_len;
-	size_t	i;
+        *c = ft_tolower(*c);
+}
 
-	dst_len = ft_strlen(dst);
-	src_len = ft_strlen(src);
-	i = 0;
-	if (size > dst_len)
-	{
-		while ((size - 1) > (dst_len + i) && src[i])
-		{
-			dst[dst_len + i] = src[i];
-			i++;
-		}
-		dst[dst_len + i] = '\0';
-		return (dst_len + src_len);
-	}
-	return (size + src_len);
+void    ft_striteri(char *s, void (*f)(unsigned int, char*))
+{
+        unsigned int    i;
+
+        if (!s)
+                return;
+        i = 0;
+        while (s[i])
+        {
+                f(i, &s[i]);
+                i++;
+        }
 }
