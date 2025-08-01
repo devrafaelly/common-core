@@ -1,0 +1,71 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/07/29 20:25:25 by codespace         #+#    #+#             */
+/*   Updated: 2025/07/29 22:52:38 by codespace        ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
+#include <string.h>
+#include <stdlib.h>
+
+static  size_t  start_index(char const *s1, char const *set)
+{
+    size_t i;
+
+    i = 0;
+    while (s1[i] && char_verification(s1[i], set) == 1)
+        i++;
+    return (i);
+}
+
+static  size_t  end_index(char const *s1, size_t buffer, char const *set)
+{
+    while (buffer >= 0 && char_verification(s1[buffer], set) == 1)
+        buffer--;
+    return (buffer);
+}
+
+static  size_t  char_verification(char c, char const *set)
+{
+    size_t i;
+
+    i = 0;
+    while (set[i])
+    {
+        if (c == set[i])
+        {
+            return (1);
+        }
+        i++;
+    }
+    return (0);
+}
+
+char    *ft_strtrim(char const *s1, char const *set)
+{
+    char    *s2;
+    size_t  s2_len;
+    size_t  start;
+    size_t  end;
+
+    if (!s1 || !set)
+        return (NULL);
+    start = start_index(s1, set);
+    end = end_index(s1, (ft_strlen(s1) - 1), set);
+    s2_len = (end - start) + 1;
+    if (start > end)
+        s2_len = 0;
+    s2 = malloc(s2_len + 1);
+    if (!s2)
+        return (NULL);
+    ft_memcpy(s2, &s1[start], s2_len);
+    s2[s2_len] = '\0';
+    return (s2);
+}
