@@ -6,7 +6,7 @@
 #    By: codespace <codespace@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/21 11:31:58 by rafaoliv          #+#    #+#              #
-#    Updated: 2025/07/28 15:23:40 by codespace        ###   ########.fr        #
+#    Updated: 2025/07/29 22:50:39 by codespace        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,7 +48,10 @@ SRC = 	ft_isalnum.c \
 	ft_substr.c \
 	ft_strjoin.c \
 	ft_strmapi.c \
-	ft_striteri.c
+	ft_striteri.c \
+	ft_itoa.c \
+	ft_strtrim.c \
+	ft_split.c
 
 %.o: %.c
 	@$(CC) $(FLAGS) -c $< -o $@

@@ -6,13 +6,14 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/25 21:50:24 by codespace         #+#    #+#             */
-/*   Updated: 2025/07/25 22:46:24 by codespace        ###   ########.fr       */
+/*   Updated: 2025/07/29 13:20:49 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 #include <string.h>
+#include <stdlib.h>
 
 char    *ft_substr(char const *s, unsigned int start, size_t len)
 {

@@ -6,11 +6,12 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/25 15:21:35 by codespace         #+#    #+#             */
-/*   Updated: 2025/07/25 19:52:40 by codespace        ###   ########.fr       */
+/*   Updated: 2025/07/29 13:21:53 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
