@@ -6,7 +6,7 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/25 21:05:15 by codespace         #+#    #+#             */
-/*   Updated: 2025/07/25 21:10:07 by codespace        ###   ########.fr       */
+/*   Updated: 2025/08/01 16:48:39 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,5 @@ void    ft_putendl_fd(char *s, int fd)
         if (!s)
                 return;
         ft_putstr_fd(s, fd);
-        write(fd, '\n', 1);
+        ft_putchar_fd('\n', fd);
 }
