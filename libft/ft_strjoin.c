@@ -6,13 +6,14 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/28 14:02:55 by codespace         #+#    #+#             */
-/*   Updated: 2025/07/28 14:49:37 by codespace        ###   ########.fr       */
+/*   Updated: 2025/07/29 13:21:12 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 #include <string.h>
+#include <stdlib.h>
 
 char    *ft_strjoin(char const *s1, char const *s2)
 {

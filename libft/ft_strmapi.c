@@ -6,13 +6,14 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/28 14:52:17 by codespace         #+#    #+#             */
-/*   Updated: 2025/07/28 15:43:36 by codespace        ###   ########.fr       */
+/*   Updated: 2025/07/29 13:21:02 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 #include <string.h>
+#include <stdlib.h>
 
 static  char    to_upper(unsigned int i, char c)
 {
