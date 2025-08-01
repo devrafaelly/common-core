@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static  void    f(unsigned int, char* c)
+static  void    tolower(unsigned int i, char *c)
 {
         *c = ft_tolower(*c);
 }

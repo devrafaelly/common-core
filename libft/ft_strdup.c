@@ -19,18 +19,12 @@ char	*ft_strdup(const char *s)
 {
 	char *s_cpy;
 	size_t	len;
-	size_t	i;
 	
 	len = ft_strlen(s);
-	s_cpy = malloc(len + 1 * sizeof(char));
+	s_cpy = malloc((len + 1) * sizeof(char));
 	if (!s_cpy)
 		return (NULL);
-	i = 0;
-	while (i < len)
-	{
-		s_cpy[i] = s[i];
-		i++;
-	}
-	s_cpy[i] = '\0';
+	ft_memcpy(s_cpy, s, len);
+	s_cpy[len] = '\0';
 	return (s_cpy);
 }

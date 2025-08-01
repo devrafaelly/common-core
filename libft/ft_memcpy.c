@@ -21,10 +21,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	i = 0;
 	while (i < n)
 	{
-		if (dest < src || dest + n > src)
-			ft_memmove(dest, src, n);
-		else
-			((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
+		((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
 		i++;
 	}
 	return (dest);

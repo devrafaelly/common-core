@@ -24,13 +24,7 @@ char    *ft_substr(char const *s, unsigned int start, size_t len)
                 return (NULL);
         str_len = ft_strlen(s);
         if (start >= str_len)
-        {
-                substr = malloc(1);
-                if (!substr)
-                        return (NULL);
-                substr[0] = '\0';
-                return (substr);
-        }
+                len = 0;
         if (start + len > str_len)
                 len = str_len - start;
         substr = malloc((len + 1) * sizeof(char));

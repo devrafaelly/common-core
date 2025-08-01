@@ -35,22 +35,22 @@ static  char    alternate_case(unsigned int i, char c)
 
 char    *ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-        char            *upper;
+        char            *new_str;
         unsigned int    len;
         unsigned int    i;
 
         if (!s)
                 return (NULL);
         len = ft_strlen(s);
-        upper = malloc(len + 1);
-        if (!upper)
+        new_str = malloc(len + 1);
+        if (!new_str)
                 return (NULL);
         i = 0;
         while(s[i])
         {
-                upper[i] = f(i, s[i]);
+                new_str[i] = f(i, s[i]);
                 i++;
         }
-        upper[i] = '\0';
-        return (upper);
+        new_str[i] = '\0';
+        return (new_str);
 }

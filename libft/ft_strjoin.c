@@ -21,7 +21,6 @@ char    *ft_strjoin(char const *s1, char const *s2)
         size_t     s1_len;
         size_t     s2_len;
         size_t     str_len;
-        size_t     i;
 
         if (!s1 || !s2)
                 return (NULL);
@@ -31,12 +30,8 @@ char    *ft_strjoin(char const *s1, char const *s2)
         strjoin = malloc(str_len + 1);
         if (!strjoin)
                 return (NULL);
-        i = 0;
-        while (s1[i])
-        {
-                strjoin[i] = s1[i];
-                i++;
-        }
-        ft_strlcat(&strjoin[i], s2, s2_len + 1);
+        ft_memcpy(strjoin, s1, s1_len);
+        ft_memcpy(strjoin + s1_len, s2, s2_len);
+        strjoin[str_len] = '\0';
         return (strjoin);
 }

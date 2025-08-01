@@ -16,27 +16,19 @@
 #include <string.h>
 #include <stdlib.h>
 
-void    *ft_calloc(size_t nmemb, size_t size)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-        char    *address;
+	char    *address;
         size_t  address_size;
-        size_t  i;
 
+	if (nmemb != 0 && size > (size_t)-1 / nmemb)
+		return (NULL);
         address_size = (nmemb * size);
         if (address_size == 0)
-        {
-            address = malloc(1);
             address_size = 1;
-        }
-        else
-            address = malloc(address_size);
+        address = malloc(address_size);
         if (!address)
             return (NULL);
-        i = 0;
-        while (i < address_size)
-        {
-            address[i] = '\0';
-            i++;
-        }
+	ft_bzero(address, address_size);
         return (address);
 }
