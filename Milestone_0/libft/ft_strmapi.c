@@ -1,31 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rafaoliv <rafaoliv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/22 19:43:38 by marvin            #+#    #+#             */
-/*   Updated: 2025/07/24 15:14:55 by rafaoliv         ###   ########.fr       */
+/*   Created: 2025/07/28 14:52:17 by codespace         #+#    #+#             */
+/*   Updated: 2025/08/04 13:31:40 by rafaoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 #include <string.h>
+#include <stdlib.h>
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	int	i;
+	char			*new_str;
+	unsigned int	len;
+	unsigned int	i;
 
+	if (!s)
+		return (NULL);
+	len = ft_strlen(s);
+	new_str = malloc(len + 1);
+	if (!new_str)
+		return (NULL);
 	i = 0;
 	while (s[i])
 	{
-		if (s[i] == (char)c)
-			return ((char *)&s[i]);
+		new_str[i] = f(i, s[i]);
 		i++;
 	}
-	if ((char)c == '\0')
-		return ((char *)&s[i]);
-	return (NULL);
+	new_str[i] = '\0';
+	return (new_str);
 }

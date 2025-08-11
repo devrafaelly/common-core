@@ -1,22 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*   By: rafaoliv <rafaoliv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/25 20:59:23 by codespace         #+#    #+#             */
-/*   Updated: 2025/07/25 21:04:16 by codespace        ###   ########.fr       */
+/*   Created: 2025/07/22 19:43:38 by marvin            #+#    #+#             */
+/*   Updated: 2025/08/04 13:04:50 by rafaoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-#include <unistd.h>
+#include <string.h>
 
-void    ft_putstr_fd(char *s, int fd)
+char	*ft_strchr(const char *s, int c)
 {
-        if (!s)
-                return;
-        write(fd, s, ft_strlen(s));
+	int	i;
+
+	i = 0;
+	while (s[i])
+	{
+		if (s[i] == (char)c)
+			return ((char *)&s[i]);
+		i++;
+	}
+	if ((char)c == '\0')
+		return ((char *)&s[i]);
+	return (NULL);
 }
