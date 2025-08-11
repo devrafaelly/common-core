@@ -15,24 +15,6 @@
 #include <string.h>
 #include <stdlib.h>
 
-static  char    to_upper(unsigned int i, char c)
-{
-        return (ft_toupper(c));
-}
-
-static  char    to_lower(unsigned int i, char c)
-{
-    return (ft_tolower(c));
-}
-
-static  char    alternate_case(unsigned int i, char c)
-{
-    if (i % 2 == 0)
-        return (ft_toupper(c));
-    else
-        return (ft_tolower(c));
-}
-
 char    *ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
         char            *new_str;
